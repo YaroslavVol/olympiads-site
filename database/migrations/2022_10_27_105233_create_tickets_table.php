@@ -22,12 +22,12 @@ class CreateTicketsTable extends Migration
             $table->string('mname')->nullable();
             $table->string('institution')->nullable();
             $table->string('link_work')->nullable();
-            $table->string('score')->nullable();
-            $table->string('is_sert')->nullable();
+            $table->integer('score')->nullable();
+            $table->boolean('is_sert')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->foreignIdFor(Student::class);
-            $table->foreignIdFor(Olymp::class);
+            $table->foreignIdFor(Student::class)->constrained();
+            $table->foreignIdFor(Olymp::class)->constrained();
         });
     }
 

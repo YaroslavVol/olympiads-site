@@ -19,7 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('access')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->constrained();
         });
     }
 

@@ -23,10 +23,10 @@ class CreateStudentsTable extends Migration
             $table->string('course')->nullable();
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
-            $table->string('dopinformation')->nullable();
+            $table->text('dopinformation')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->constrained();
         });
     }
 
